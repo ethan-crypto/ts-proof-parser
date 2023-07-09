@@ -40,7 +40,7 @@ const abi = [
   ];
 
 async function main() {
-    let [pubInputs, proof] = await verifyProofViaSolidity("test.pf");
+    let [pubInputs, proof] = await parse_proof("test.pf");
     // Instantiate contract
 
     let Verifier: Verifier
@@ -72,7 +72,7 @@ function vecu64_to_fieldb(b: string[]): bigint {
 }
 
 
-async function verifyProofViaSolidity(proofFilePath: string): Promise<[bigint[], string]> {
+async function parse_proof(proofFilePath: string): Promise<[bigint[], string]> {
     // Read the proof file
     const proofFileContent: string = fs.readFileSync(proofFilePath, 'utf-8');
     // Parse it into Snark object using JSONBig
