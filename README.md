@@ -1,13 +1,24 @@
-# Sample Hardhat Project
+# Parse ezkl proofs in TS for front end applications.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+The helper function in scripts/parse-proof.ts enables users to parse EZKL proofs into `publicInputs` and `proof`, the two
+parameters EZKL verifiers accept as input.
 
-Try running some of the following tasks:
+To run the script 
+
+1) install dependencies:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+npm install
+```
+
+2) boot up a local hardhat node
+
+```shell
 npx hardhat node
-npx hardhat run scripts/deploy.ts
+```
+
+3) Run the script :) 
+
+```shell
+npx hardhat run --network localhost scripts/parse-proof.ts
 ```
